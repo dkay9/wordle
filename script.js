@@ -7,6 +7,7 @@ let nextLetter = 0
 let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
 console.log(rightGuessString);
 
+//creating game layout using js
 function initBoard(){
     let board = document.getElementById('game-board')
 
@@ -24,6 +25,7 @@ function initBoard(){
 }
 initBoard()
 
+//function that accepts user inputs
 document.addEventListener('keyup', (e) => {
     if(guessesRemaining === 0){
         return 
@@ -71,7 +73,7 @@ function deleteLetter(){
 }
 
 function checkGuess(){
-    let row = getElementsByClassName('letter-row')[6 - guessesRemaining]
+    let row = document.getElementsByClassName('letter-row')[6 - guessesRemaining]
     let guessString = ''
     let rigthGuess = Array.from(rightGuessString)
 
